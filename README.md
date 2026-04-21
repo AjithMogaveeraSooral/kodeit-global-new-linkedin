@@ -1,2 +1,2 @@
-# kodeit-global-new-linkedin
+# kodeit-educator-event
 Kodeit Educator Event
