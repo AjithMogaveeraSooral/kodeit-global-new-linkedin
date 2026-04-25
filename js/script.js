@@ -5,6 +5,16 @@ document.addEventListener('DOMContentLoaded', function() {
     registrationForm.addEventListener('submit', function(e) {
         e.preventDefault();
 
+        // Validate consent checkbox
+        const consentCheckbox = document.getElementById('consentCheckbox');
+        const consentError = document.getElementById('consentError');
+        if (!consentCheckbox.checked) {
+            consentError.style.display = 'block';
+            consentCheckbox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            return;
+        }
+        consentError.style.display = 'none';
+
         // Validate at least one schedule checkbox is selected
         const allScheduleCheckboxes = document.querySelectorAll('.schedule-dropdown input[type="checkbox"]:checked');
         const scheduleError = document.getElementById('scheduleError');
@@ -85,6 +95,13 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('country_code_input').value = code;
             document.getElementById('countryOptions').style.display = 'none';
         });
+    });
+
+    // Hide consent error when checkbox is checked
+    document.getElementById('consentCheckbox').addEventListener('change', function() {
+        if (this.checked) {
+            document.getElementById('consentError').style.display = 'none';
+        }
     });
 
     // Update placeholder text when checkboxes change

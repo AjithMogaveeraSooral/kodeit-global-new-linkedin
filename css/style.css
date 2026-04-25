@@ -398,6 +398,45 @@ h1 {
   box-shadow: 0 0 0 1px var(--accent-blue);
 }
 
+/* Consent checkbox */
+.consent-group {
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.consent-label {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--text-grey);
+  cursor: pointer;
+  line-height: 1.5;
+}
+
+.consent-label input[type="checkbox"] {
+  margin-top: 3px;
+  min-width: 16px;
+  min-height: 16px;
+  accent-color: var(--accent-blue);
+  cursor: pointer;
+}
+
+.consent-label a {
+  color: var(--accent-blue);
+  text-decoration: underline;
+}
+
+.consent-label a:hover {
+  color: var(--primary-color);
+}
+
+.consent-error {
+  color: #e53935;
+  font-size: 13px;
+  margin: 6px 0 0 26px;
+}
+
 .form-actions {
   display: flex;
   gap: 15px;
